@@ -1,6 +1,6 @@
 // frontend/src/components/Register.js
 import React, { useState, useContext } from "react";
-import { useNavigate } from "react-router-dom";
+import { useNavigate, Link } from "react-router-dom";
 import { AuthContext } from "../context/AuthContext";
 
 const Register = () => {
@@ -53,6 +53,12 @@ const Register = () => {
         >
           Register
         </button>
+        <div className="mt-4">
+          <span>Already have an account? </span>
+          <Link to="/login" className="text-blue-500">
+            Login here
+          </Link>
+        </div>
         {error && <div className="text-red-500 mt-4">{error}</div>}
         {success && (
           <div className="text-green-500 mt-4">

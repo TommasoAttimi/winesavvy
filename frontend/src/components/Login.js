@@ -1,7 +1,7 @@
 // frontend/src/components/Login.js
 import React, { useState, useContext } from "react";
+import { useNavigate, Link } from "react-router-dom";
 import { AuthContext } from "../context/AuthContext";
-import { useNavigate } from "react-router-dom";
 
 const Login = () => {
   const [email, setEmail] = useState("");
@@ -45,6 +45,12 @@ const Login = () => {
         >
           Login
         </button>
+        <div className="mt-4">
+          <span>Don't have an account? </span>
+          <Link to="/register" className="text-blue-500">
+            Register here
+          </Link>
+        </div>
         {error && <div className="text-red-500 mt-4">{error}</div>}
         {success && (
           <div className="text-green-500 mt-4">
